@@ -9,6 +9,9 @@ def get_disco_handle(server):
     from disco.core import Disco
     from disco.ddfs import DDFS
 
+    if ':' not in server:
+        server += ":8989"
+
     if server and not server.startswith('disco://'):
         server = 'disco://' + server
 
